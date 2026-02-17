@@ -13,11 +13,10 @@ The primary goal of this project was to understand the underlying logic of **dat
 * **CLI Interface:** Processes commands directly from a text file via the command line interface.
   
 ## 💻 Usage
+You need to provide an input file containing the commands as an argument.
+```bash
+python database.py input.txt
 ```
-    You need to provide an input file containing the commands as an argument.
-    ```bash
-    python database.py input.txt
-    ```
 
 ## 📝 Command Syntax (Input File Format)
 
