@@ -1,0 +1,11 @@
+CREATE_TABLE students id,name,age,major
+INSERT students 1,John Doe,20,CS
+INSERT students 2,Jane Smith,22,EE
+INSERT students 3,Bob Wilson,21,CS
+
+CREATE_TABLE courses course_id,name,major
+INSERT courses 101,Intro to Programming,CS
+INSERT courses 102,Circuit Design,EE
+INSERT courses 103,Data Structures,CS
+
+JOIN students,courses ON major

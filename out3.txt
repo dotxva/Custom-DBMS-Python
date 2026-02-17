@@ -1,0 +1,200 @@
+###################### CREATE #########################
+Table 'students' created with columns: ['id', 'name', 'age', 'major']
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'students': ('1', 'John Doe', '20', 'CS')
+
+Table: students
++----+----------+-----+-------+
+| id | name     | age | major |
++----+----------+-----+-------+
+| 1  | John Doe | 20  | CS    |
++----+----------+-----+-------+
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'students': ('2', 'Jane Smith', '22', 'EE')
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
++----+------------+-----+-------+
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'students': ('3', 'Bob Wilson', '21', 'CS')
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
+| 3  | Bob Wilson | 21  | CS    |
++----+------------+-----+-------+
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'students': ('3', 'Ted Wilson', '21', 'CS')
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
+| 3  | Bob Wilson | 21  | CS    |
+| 3  | Ted Wilson | 21  | CS    |
++----+------------+-----+-------+
+#######################################################
+
+###################### INSERT #########################
+Table 'test' not found.
+Inserted into 'test': ('3', 'Ted Wilson', '21', 'CS')
+#######################################################
+
+###################### SELECT #########################
+Table test not found.
+Condition: {'major': 'CS'}
+Select result from 'test': None
+#######################################################
+
+###################### SELECT #########################
+Column job does not exist
+Condition: {'major': 'CS'}
+Select result from 'students': None
+#######################################################
+
+###################### SELECT #########################
+Condition: {'job': 'CS'}
+Select result from 'students': [('1', 'John Doe'), ('2', 'Jane Smith'), ('3', 'Bob Wilson'), ('3', 'Ted Wilson')]
+#######################################################
+
+###################### UPDATE #########################
+Updated 'test' with {'major': 'SE'} where {'test': 'John Doe'}
+'Table test not found.'
+0 rows updated.
+#######################################################
+
+###################### UPDATE #########################
+Updated 'students' with {'job': 'SE'} where {'test': 'John Doe'}
+Column job does not exist.
+0 rows updated.
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
+| 3  | Bob Wilson | 21  | CS    |
+| 3  | Ted Wilson | 21  | CS    |
++----+------------+-----+-------+
+#######################################################
+
+###################### UPDATE #########################
+Updated 'students' with {'major': 'SE'} where {'job': 'John Doe'}
+Column job does not exist.
+0 rows updated.
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
+| 3  | Bob Wilson | 21  | CS    |
+| 3  | Ted Wilson | 21  | CS    |
++----+------------+-----+-------+
+#######################################################
+
+###################### DELETE #########################
+Deleted from 'test' where {'age': '22'}
+'Table test not found.'
+0 rows deleted.
+#######################################################
+
+###################### DELETE #########################
+Deleted from 'students' where {'job': '22'}
+Column job does not exist.
+0 rows deleted.
+
+Table: students
++----+------------+-----+-------+
+| id | name       | age | major |
++----+------------+-----+-------+
+| 1  | John Doe   | 20  | CS    |
+| 2  | Jane Smith | 22  | EE    |
+| 3  | Bob Wilson | 21  | CS    |
+| 3  | Ted Wilson | 21  | CS    |
++----+------------+-----+-------+
+#######################################################
+
+###################### COUNT #########################
+'Table test not found'
+Total number of entries in 'test' is 0
+#######################################################
+
+###################### COUNT #########################
+Column test does not exist
+Total number of entries in 'students' is 0
+#######################################################
+
+###################### CREATE #########################
+Table 'courses' created with columns: ['course_id', 'name', 'major']
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'courses': ('101', 'Intro to Programming', 'CS')
+
+Table: courses
++-----------+----------------------+-------+
+| course_id | name                 | major |
++-----------+----------------------+-------+
+| 101       | Intro to Programming | CS    |
++-----------+----------------------+-------+
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'courses': ('102', 'Circuit Design', 'EE')
+
+Table: courses
++-----------+----------------------+-------+
+| course_id | name                 | major |
++-----------+----------------------+-------+
+| 101       | Intro to Programming | CS    |
+| 102       | Circuit Design       | EE    |
++-----------+----------------------+-------+
+#######################################################
+
+###################### INSERT #########################
+Inserted into 'courses': ('103', 'Data Structures', 'CS')
+
+Table: courses
++-----------+----------------------+-------+
+| course_id | name                 | major |
++-----------+----------------------+-------+
+| 101       | Intro to Programming | CS    |
+| 102       | Circuit Design       | EE    |
+| 103       | Data Structures      | CS    |
++-----------+----------------------+-------+
+#######################################################
+
+####################### JOIN ##########################
+Join tables test and courses
+'Table test does not exist'
+#######################################################
+
+####################### JOIN ##########################
+Join tables students and test
+'Table test does not exist'
+#######################################################
+
+####################### JOIN ##########################
+Join tables students and courses
+Column test does not exist
+#######################################################
